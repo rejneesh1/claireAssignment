@@ -1,0 +1,134 @@
+<form class="row" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+
+	<!-- name -->
+	
+	<div class="form-group col-md-6">
+		<label for="name">Name</label>
+		<input
+			type="text" 
+			class="form-control"  
+			placeholder="Enter Your Name"  
+			pattern="[a-zA-Z]+"
+			minlength="4"
+			required
+			autocomplete="off" 
+			name="name"
+			ngModel
+			#inp_name="ngModel">
+		<p class="help-block text-info" *ngIf="inp_name.errors && inp_name.errors.minlength">
+			Name Should contain at least 4 alphabets
+		</p>
+		<p class="help-block text-info" *ngIf="inp_name.errors && inp_name.errors.pattern">
+			Only alphabets are valid characters.
+		</p>
+	  </div>
+
+	  <!-- gender -->
+
+	<div class="col-md-6 form-group">
+		<p>Gender</p>
+		<div class="form-check form-check-inline">
+			<input
+				class="form-check-input"
+				type="radio" 
+				name="gender" 
+				id="male" 
+				value="male"
+				ngModel
+				#gender="ngModel" 
+				required>
+			<label class="form-check-label" for="male">Male</label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input 
+				class="form-check-input" 
+				type="radio" 
+				name="gender" 
+				id="female" 
+				value="female"
+				ngModel
+				#gender="ngModel">
+			<label class="form-check-label" for="female">Female</label>
+		</div>
+	</div>
+
+	<!-- email -->
+
+  	<div class="form-group col-md-6">
+		<label>Email</label>
+		<input
+			type="text"
+			class="form-control" 
+			placeholder="Enter Your Email ID"
+			name="email"
+			pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+			required
+			autocomplete="off"
+			ngModel
+			#inp_email="ngModel">
+		<p class="help-block text-info" *ngIf="inp_email.errors && inp_email.errors.pattern">
+		Email should be of format abc@xyz.com
+		</p>
+	</div>
+
+	<!-- mobile number -->
+	
+  	<div class="form-group col-md-6">
+		<label>Mobile Number</label>
+		<input
+			type="text"
+			class="form-control" 
+			placeholder="Enter Mobile Number"
+			name="number"
+			pattern="^[0-9]{10}$"
+			required
+			autocomplete="off"
+			ngModel
+			#inp_number="ngModel">
+		<p class="help-block text-info" *ngIf="inp_number.errors && inp_number.errors.pattern">
+			Mobile number should contain 10 digits
+		</p>
+	</div>
+
+	<!-- state -->
+	
+	<div class="form-group col-md-12">
+		<label for="inputState">State</label>
+		<select 
+			id="inputState" 
+			class="form-control" 
+			ngModel 
+			#state=ngModel
+			name="state"
+			required>
+			<option value selected>Select--</option>
+			<option *ngFor="let state of states">{{state}}</option>
+		</select>
+	</div>
+
+	<!-- t&c -->
+
+	<div class="form-check form-group text-center col-md-12">
+		<input 
+			class="form-check-input" 
+			type="checkbox"
+			name="T&C" 
+			id="defaultCheck1"
+			ngModel
+			#condition="ngModel"
+			required>
+		<label class="form-check-label" for="defaultCheck1">
+		  I have read and agree to the <a href="#">terms of service</a>
+		</label>
+	</div>
+
+	<!-- submit button -->
+
+	<div class="text-center col-md-12">
+		<button
+			[disabled]="!f.dirty || !f.valid"
+			name="button"
+			class="btn btn-success">Submit
+		</button>
+	</div>
+</form>

@@ -1,0 +1,20 @@
+.topnav{
+  background-color: #ededed5c
+}
+.topnav a {
+  color: #1010108c
+}
+.topnav a:hover {
+  color: #0a0000
+}
+.nav button{
+  border-radius: 0;
+  line-height: 152%
+}
+.sidenav {
+    height: 100% !important;
+    background-color: black;
+    width: min-content;
+    position: fixed;
+    top: 0;
+  }

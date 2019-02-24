@@ -1,0 +1,47 @@
+<!-- topnavbar -->
+<ul class="nav pull-left"> 
+	<li class="nav-item ml-1 nav-link" 
+		(click)="isCollapsed=!isCollapsed" 
+		role="button" 
+		[attr.aria-expanded]="!isCollapsed" 
+		aria-controls="collapseBasic">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</li>
+</ul>
+<ul class="nav justify-content-end topnav">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+    	<a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+    	<a class="nav-link" href="#">Contact Us</a>
+    </li>
+ </ul>
+ <!-- topnavbar ends -->
+
+ <!-- sidenavbar -->
+<div id="collapseEvent" class="sidenav" [collapse]="isCollapsed">
+	<nav class="nav flex-column">
+		<button class="btn btn-light btn" (click)="isCollapsed=!isCollapsed"><i class="fa fa-times" aria-hidden="true"></i></button>
+		<hr>
+		<a class="nav-link active" href="#">
+			<i class="fa fa-2x fa-user" aria-hidden="true"></i>
+		</a>
+		<hr>
+		<a class="nav-link active" href="#">
+			<i class="fa fa-2x fa-address-book-o" aria-hidden="true"></i>
+		</a>
+		<hr>
+		<a class="nav-link active" href="#">
+			<i class="fa fa-2x fa-comments-o" aria-hidden="true"></i>
+		</a>
+		<hr>
+		<a class="nav-link active" href="#">
+			<i class="fa fa-2x fa-search" aria-hidden="true"></i>
+		</a>
+		<hr>
+	</nav>
+</div>
+<!-- sidenavbar ends -->

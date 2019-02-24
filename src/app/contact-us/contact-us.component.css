@@ -1,0 +1,12 @@
+input.ng-valid.ng-touched , select.ng-valid.ng-touched{
+    border: 2px seagreen solid;
+}
+
+input.ng-invalid.ng-touched , select.ng-invalid.ng-touched{
+    border: 2px rgb(202, 31, 31) solid;
+}
+
+form{
+    width:80%;
+    margin: 4% auto;
+}
